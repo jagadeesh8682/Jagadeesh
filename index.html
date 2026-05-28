@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jagadeesh S — Sr. Flutter Developer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="#">JAGADEESH<span class="dot"></span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#opensource">Open Source</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-ai-btn" id="openAgentBtn">
+        <span class="ai-pulse"></span>
+        <i class="fa-solid fa-robot"></i> AI Assistant
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-text" data-aos="fade-right">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-name">Jagadeesh<br/></h1>
+        <h2 class="hero-title">Sr. <span class="accent">Flutter</span> Developer/ Agentic AI Specialist</h2>
+        <p class="hero-sub">5 years crafting cross-platform apps for iOS, Android & Web.<br/>
+          AI-powered products · 350+ apps published · Open-source contributor.</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num" data-target="5">0</span>+<p>Years Exp.</p></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num" data-target="350">0</span>+<p>Apps Built</p></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num" data-target="95">0</span>%<p>Crash-Free</p></div>
+        </div>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#experience" class="btn-ghost">View Work</a>
+        </div>
+        <div class="hero-socials">
+          <a href="mailto:jagadeeshs8682@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/jagadeesh-s-1aba83295/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/jagadeesh8682" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://pub.dev/packages/ringtone_set_plus" target="_blank" title="pub.dev"><i class="fa-solid fa-cube"></i></a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left">
+        <div class="profile-card">
+          <div class="profile-glow"></div>
+          <div class="profile-img-wrap">
+            <img src="assets/jagadeesh.jpeg" alt="Jagadeesh S" class="profile-img" id="profileImg" />
+            <div class="profile-ring ring-1"></div>
+            <div class="profile-ring ring-2"></div>
+          </div>
+          <div class="profile-badge flutter">
+            <i class="fa-brands fa-flutter" style="color:#54c5f8"></i> Flutter
+          </div>
+          <div class="profile-badge ai">
+            <i class="fa-solid fa-brain" style="color:#a78bfa"></i> Agentic AI
+          </div>
+          <div class="profile-badge dart">
+            <i class="fa-solid fa-code" style="color:#67e8f9"></i> Dart
+          </div>
+          <div class="profile-badge python">
+            <i class="fa-brands fa-python" style="color:#ffd43b"></i> Python
+          </div>
+          <div class="profile-badge golang">
+            <i class="fa-solid fa-server" style="color:#00acd7"></i> Golang
+          </div>
+          <div class="profile-badge awsbadge">
+            <i class="fa-brands fa-aws" style="color:#ff9900"></i> AWS
+          </div>
+          <div class="floating-tag tag-1">GetX</div>
+          <div class="floating-tag tag-2">Clean Arch</div>
+          <div class="floating-tag tag-3">CI/CD</div>
+          <div class="floating-tag tag-4">FastAPI</div>
+          <div class="floating-tag tag-5">S3</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label">Who I Am</div>
+      <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <p>I'm a <strong>Senior Flutter Developer</strong> with 5 years of hands-on experience building production-grade cross-platform applications for iOS, Android, Web, Windows, and macOS.</p>
+          <p>My work spans <strong>AI-driven products</strong> (script generation, scene automation, multimedia exports), <strong>telehealth platforms</strong> (real-time video consultations via Agora SDK), and <strong>large-scale e-commerce</strong> ecosystems powering 350+ vendor storefronts.</p>
+          <p>I'm deeply passionate about <strong>Agentic AI</strong> — building intelligent systems that can perceive, reason, and act autonomously — integrating multimodal AI capabilities (voice, video, chat) directly into Flutter and web apps.</p>
+          <p>Open-source contributor with a published Flutter plugin <strong>ringtone_set_plus</strong> on pub.dev (160 pts, MIT-licensed).</p>
+        </div>
+        <div class="about-highlights" data-aos="fade-left">
+          <div class="highlight-card">
+            <i class="fa-brands fa-flutter"></i>
+            <h4>Cross-Platform Expert</h4>
+            <p>iOS · Android · Web · Windows · macOS</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa-solid fa-brain"></i>
+            <h4>Agentic AI Integration</h4>
+            <p>Chat · Voice · Video · LLM Pipelines</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa-solid fa-rocket"></i>
+            <h4>Rapid Deployment</h4>
+            <p>CI/CD · Docker · 40% faster releases</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <h4>Open Source</h4>
+            <p>ringtone_set_plus · pub.dev · GitHub</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ EXPERIENCE ═══════════════════════════ -->
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot active"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3>Sr. Flutter Developer</h3>
+                <span class="company">Dimensionleap Pvt Ltd, Hyderabad</span>
+              </div>
+              <span class="period current">May 2025 – Present</span>
+            </div>
+            <ul class="tcard-list">
+              <li>Leading <strong>SpotLight</strong> — AI-driven app for the film industry with script generation, AI scene creation & multimedia exports (PDF/PPT/Video).</li>
+              <li>Built video editing & content automation features, boosting creator productivity by <strong>30%</strong>.</li>
+              <li>Delivered <strong>Aesthatiq</strong> telehealth platform: real-time video consultations (Agora SDK), doctor onboarding, appointment scheduling & admin portal.</li>
+              <li>Ensured secure data handling & optimised performance across <strong>iOS, Android, Web, Windows, macOS</strong>.</li>
+              <li>Applied <strong>Clean Architecture (ACRI, Provider)</strong> and CI/CD workflows.</li>
+            </ul>
+            <div class="tcard-tags">
+              <span>Flutter</span><span>Agora SDK</span><span>Clean Arch</span><span>Provider</span><span>AI</span><span>CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3>Flutter Developer</h3>
+                <span class="company">AppifyRetail Pvt Ltd, Hyderabad</span>
+              </div>
+              <span class="period">Sep 2023 – May 2025</span>
+            </div>
+            <ul class="tcard-list">
+              <li>Developed & maintained template-based apps enabling <strong>350+ vendors</strong> to launch branded storefronts on Play Store & App Store.</li>
+              <li>Streamlined CI/CD deployment, reducing release cycle time by <strong>40%</strong>.</li>
+              <li>Implemented e-commerce: product management, secure payments, customer engagement tools.</li>
+              <li>Integrated <strong>FastAPI & MongoDB</strong> for secure, scalable data pipelines.</li>
+              <li>Achieved <strong>95% crash-free rate</strong> through rigorous testing & performance tuning.</li>
+            </ul>
+            <div class="tcard-tags">
+              <span>GetX</span><span>FastAPI</span><span>MongoDB</span><span>CI/CD</span><span>Clean Arch</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3>Flutter Developer</h3>
+                <span class="company">VGrow, India</span>
+              </div>
+              <span class="period">Mar 2022 – Aug 2023</span>
+            </div>
+            <ul class="tcard-list">
+              <li>Built & deployed a <strong>school management app</strong> for iOS & Android: gate pass, homework/classwork, attendance tracking.</li>
+              <li>Enhanced real-time communication via push notifications & API-driven updates.</li>
+              <li>Improved app performance, achieving <strong>25% faster load time</strong>.</li>
+            </ul>
+            <div class="tcard-tags">
+              <span>Provider</span><span>REST APIs</span><span>Push Notifications</span><span>Firebase</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3>Jr. Flutter Developer</h3>
+                <span class="company">Mcmewa Pharma, Secunderabad</span>
+              </div>
+              <span class="period">Apr 2021 – Feb 2022</span>
+            </div>
+            <ul class="tcard-list">
+              <li>Contributed to a <strong>pharma supply & delivery app</strong>: real-time order tracking, delivery scheduling, secure payments.</li>
+              <li>Integrated RESTful APIs & push notifications for customer-supplier communication.</li>
+              <li>Achieved <strong>90% on-time delivery tracking accuracy</strong>.</li>
+            </ul>
+            <div class="tcard-tags">
+              <span>Flutter</span><span>REST APIs</span><span>Firebase</span><span>QA</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-label">What I Know</div>
+      <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-category" data-aos="fade-up">
+          <div class="skill-cat-icon"><i class="fa-brands fa-flutter"></i></div>
+          <h4>Languages & Frameworks</h4>
+          <div class="skill-tags">
+            <span class="skill-pill primary">Flutter</span>
+            <span class="skill-pill primary">Dart</span>
+            <span class="skill-pill primary">Python</span>
+            <span class="skill-pill primary">Golang</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="25">
+          <div class="skill-cat-icon"><i class="fa-brands fa-python"></i></div>
+          <h4>Python Ecosystem</h4>
+          <div class="skill-tags">
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Django</span>
+            <span class="skill-pill">Flask</span>
+            <span class="skill-pill">Pydantic</span>
+            <span class="skill-pill">SQLAlchemy</span>
+            <span class="skill-pill">Celery</span>
+            <span class="skill-pill">NumPy</span>
+            <span class="skill-pill">Pandas</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="35">
+          <div class="skill-cat-icon"><i class="fa-solid fa-gopuram"></i></div>
+          <h4>Golang Ecosystem</h4>
+          <div class="skill-tags">
+            <span class="skill-pill">Gin</span>
+            <span class="skill-pill">Fiber</span>
+            <span class="skill-pill">Echo</span>
+            <span class="skill-pill">GORM</span>
+            <span class="skill-pill">Go Routines</span>
+            <span class="skill-pill">gRPC</span>
+            <span class="skill-pill">Go Modules</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="50">
+          <div class="skill-cat-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h4>State Management</h4>
+          <div class="skill-tags">
+            <span class="skill-pill">GetX</span>
+            <span class="skill-pill">Provider</span>
+            <span class="skill-pill">Bloc</span>
+            <span class="skill-pill">Redux</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-cat-icon"><i class="fa-solid fa-plug"></i></div>
+          <h4>API Integration</h4>
+          <div class="skill-tags">
+            <span class="skill-pill">Dio</span>
+            <span class="skill-pill">RESTful APIs</span>
+            <span class="skill-pill">FastAPI</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-cat-icon"><i class="fa-solid fa-brain"></i></div>
+          <h4>Agentic AI</h4>
+          <div class="skill-tags">
+            <span class="skill-pill ai-pill">LLM Integration</span>
+            <span class="skill-pill ai-pill">Video Call AI</span>
+            <span class="skill-pill ai-pill">Voice Assist</span>
+            <span class="skill-pill ai-pill">AI Chat</span>
+            <span class="skill-pill ai-pill">Agora SDK</span>
+            <span class="skill-pill ai-pill">WebRTC</span>
+            <span class="skill-pill ai-pill">RAG Pipelines</span>
+            <span class="skill-pill ai-pill">Multimodal AI</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-cat-icon"><i class="fa-solid fa-tools"></i></div>
+          <h4>Tools & Platforms</h4>
+          <div class="skill-tags">
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">CI/CD</span>
+            <span class="skill-pill">Firebase</span>
+            <span class="skill-pill">Xcode</span>
+            <span class="skill-pill">Android Studio</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="250">
+          <div class="skill-cat-icon"><i class="fa-solid fa-store"></i></div>
+          <h4>Deployment</h4>
+          <div class="skill-tags">
+            <span class="skill-pill">Play Store</span>
+            <span class="skill-pill">App Store</span>
+            <span class="skill-pill">AWS S3</span>
+            <span class="skill-pill">S3 Bucket</span>
+            <span class="skill-pill">CloudFront</span>
+            <span class="skill-pill">Static Hosting</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="270">
+          <div class="skill-cat-icon"><i class="fa-brands fa-aws"></i></div>
+          <h4>AWS Cloud</h4>
+          <div class="skill-tags">
+            <span class="skill-pill aws-pill">S3</span>
+            <span class="skill-pill aws-pill">EC2</span>
+            <span class="skill-pill aws-pill">Lambda</span>
+            <span class="skill-pill aws-pill">CloudFront</span>
+            <span class="skill-pill aws-pill">RDS</span>
+            <span class="skill-pill aws-pill">IAM</span>
+            <span class="skill-pill aws-pill">API Gateway</span>
+            <span class="skill-pill aws-pill">Route 53</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-cat-icon"><i class="fa-solid fa-palette"></i></div>
+          <h4>Other</h4>
+          <div class="skill-tags">
+            <span class="skill-pill">Figma</span>
+            <span class="skill-pill">Unit Testing</span>
+            <span class="skill-pill">Integration Testing</span>
+            <span class="skill-pill">Clean Architecture</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Agentic AI Feature Cards -->
+      <div class="ai-feature-section" data-aos="fade-up">
+        <div class="section-label" style="margin-top:3rem">Agentic AI Capabilities</div>
+        <div class="ai-features-grid">
+          <div class="ai-feat-card" onclick="openAgent('chat')">
+            <div class="ai-feat-icon chat-icon"><i class="fa-solid fa-comments"></i></div>
+            <h4>AI Chat</h4>
+            <p>Context-aware conversational AI powered by LLMs. Answers questions, assists workflows, and provides intelligent recommendations.</p>
+            <span class="try-btn">Try Chat <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="ai-feat-card" onclick="openAgent('voice')">
+            <div class="ai-feat-icon voice-icon"><i class="fa-solid fa-microphone"></i></div>
+            <h4>Voice Assist</h4>
+            <p>Speech recognition + synthesis AI assistant. Hands-free interaction with real-time voice processing and natural language understanding.</p>
+            <span class="try-btn">Try Voice <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="ai-feat-card" onclick="openAgent('video')">
+            <div class="ai-feat-icon video-icon"><i class="fa-solid fa-video"></i></div>
+            <h4>Video Call AI</h4>
+            <p>Real-time AI-enhanced video communication. Live face analysis, transcription, sentiment detection, and smart meeting summaries.</p>
+            <span class="try-btn">Try Video <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ OPEN SOURCE ═══════════════════════════ -->
+  <section class="section section-dark" id="opensource">
+    <div class="container">
+      <div class="section-label">Community</div>
+      <h2 class="section-title">Open Source <span class="gradient-text">Contributions</span></h2>
+      <div class="oss-card" data-aos="fade-up">
+        <div class="oss-icon"><i class="fa-brands fa-github"></i></div>
+        <div class="oss-content">
+          <div class="oss-header">
+            <h3>ringtone_set_plus</h3>
+            <div class="oss-badges">
+              <span class="oss-badge"><i class="fa-solid fa-heart"></i> 11 likes</span>
+              <span class="oss-badge"><i class="fa-solid fa-star"></i> 160 pts</span>
+              <span class="oss-badge mit"><i class="fa-solid fa-shield"></i> MIT</span>
+            </div>
+          </div>
+          <p>A Flutter plugin published on <strong>pub.dev</strong> enabling Android apps to set the default ringtone, notification sound, or alarm from assets, network URLs, or local files. Compatible with the latest Dart/Flutter versions.</p>
+          <div class="oss-links">
+            <a href="https://github.com/jagadeesh8682/ringtone_set_plus" target="_blank" class="oss-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://pub.dev/packages/ringtone_set_plus" target="_blank" class="oss-link"><i class="fa-solid fa-cube"></i> pub.dev</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ EDUCATION ═══════════════════════════ -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-label">Background</div>
+      <h2 class="section-title">Edu<span class="gradient-text">cation</span></h2>
+      <div class="edu-card" data-aos="fade-up">
+        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="edu-content">
+          <h3>Bachelor's Degree in Computer Science</h3>
+          <p class="edu-school"><i class="fa-solid fa-building-columns"></i> Jaya Arts & Science College, Chennai, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <p class="contact-intro">Looking for a Senior Flutter Developer with Agentic AI expertise? I'm open to exciting opportunities and collaborations.</p>
+          <div class="contact-links">
+            <a href="tel:+918682944609" class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div><span>Phone</span><strong>+91 8682944609</strong></div>
+            </a>
+            <a href="mailto:jagadeeshs8682@gmail.com" class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div><span>Email</span><strong>jagadeeshs8682@gmail.com</strong></div>
+            </a>
+            <a href="https://www.linkedin.com/in/jagadeesh-s-1aba83295/" target="_blank" class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+              <div><span>LinkedIn</span><strong>linkedin/jagadeesh-s</strong></div>
+            </a>
+            <a href="https://github.com/jagadeesh8682" target="_blank" class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+              <div><span>GitHub</span><strong>github/jagadeesh8682</strong></div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-ai" data-aos="fade-left">
+          <div class="contact-ai-card">
+            <div class="ai-avatar-large">
+              <div class="ai-avatar-ring"></div>
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3>Ask My AI Assistant</h3>
+            <p>Have questions about my experience, skills, or projects? My AI agent can answer instantly — via chat, voice, or video call.</p>
+            <div class="ai-modes">
+              <button class="ai-mode-btn" onclick="openAgent('chat')"><i class="fa-solid fa-comments"></i> Chat</button>
+              <button class="ai-mode-btn" onclick="openAgent('voice')"><i class="fa-solid fa-microphone"></i> Voice</button>
+              <button class="ai-mode-btn" onclick="openAgent('video')"><i class="fa-solid fa-video"></i> Video</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Jagadeesh S · Built with passion & precision</p>
+      <p class="footer-sub">Sr. Flutter Developer · Agentic AI Specialist</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════ AI AGENT MODAL ═══════════════════════════ -->
+  <div class="agent-overlay" id="agentOverlay">
+    <div class="agent-modal" id="agentModal">
+      <!-- Header -->
+      <div class="agent-header">
+        <div class="agent-identity">
+          <div class="agent-avatar">
+            <i class="fa-solid fa-robot"></i>
+            <span class="agent-status-dot"></span>
+          </div>
+          <div>
+            <h3>JAG-AI Assistant</h3>
+            <p id="agentSubtitle">Jagadeesh's Personal AI Agent</p>
+          </div>
+        </div>
+        <div class="agent-header-actions">
+          <button class="agent-tab-btn active" id="tabChat" onclick="switchTab('chat')" title="Chat">
+            <i class="fa-solid fa-comments"></i>
+          </button>
+          <button class="agent-tab-btn" id="tabVoice" onclick="switchTab('voice')" title="Voice">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+          <button class="agent-tab-btn" id="tabVideo" onclick="switchTab('video')" title="Video">
+            <i class="fa-solid fa-video"></i>
+          </button>
+          <button class="agent-close" id="closeAgent" onclick="closeAgentModal()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── CHAT TAB ── -->
+      <div class="agent-tab-panel active" id="panelChat">
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-msg bot">
+            <div class="chat-avatar-sm"><i class="fa-solid fa-robot"></i></div>
+            <div class="chat-bubble">
+              Hi! 👋 I'm JAG-AI, Jagadeesh's personal assistant. Ask me anything about his Flutter experience, projects, skills, or availability!
+              <div class="quick-chips">
+                <button onclick="sendQuick('Tell me about Jagadeesh')">About him</button>
+                <button onclick="sendQuick('What are his top skills?')">Skills</button>
+                <button onclick="sendQuick('What projects has he built?')">Projects</button>
+                <button onclick="sendQuick('Is he available for hire?')">Availability</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-bar">
+          <input type="text" id="chatInput" placeholder="Ask about Jagadeesh…" />
+          <button class="chat-voice-btn" id="chatVoiceBtn" title="Voice input" onclick="toggleVoiceInput()">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+          <button class="chat-send-btn" onclick="sendMessage()">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+        <div class="api-key-bar" id="apiKeyBar">
+          <!-- rendered by ai-agent.js renderBar() -->
+        </div>
+        <div class="server-warning-bar" id="serverWarningBar" style="display:none">
+          <i class="fa-solid fa-triangle-exclamation" style="color:#fbbf24"></i>
+          <span>Voice &amp; Video need localhost — run <code>python3 serve.py</code> then open <strong>localhost:8080</strong></span>
+          <button onclick="document.getElementById('serverWarningBar').style.display='none'">✕</button>
+        </div>
+      </div>
+
+      <!-- ── VOICE TAB ── -->
+      <div class="agent-tab-panel" id="panelVoice">
+        <div class="voice-panel">
+          <div class="voice-visualiser" id="voiceVisualiser">
+            <div class="voice-avatar">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="voice-rings">
+              <div class="vring r1"></div>
+              <div class="vring r2"></div>
+              <div class="vring r3"></div>
+            </div>
+            <div class="voice-bars" id="voiceBars">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="voice-status" id="voiceStatus">Tap the mic to start</div>
+          <div class="voice-transcript" id="voiceTranscript"></div>
+          <div class="voice-response" id="voiceResponse"></div>
+          <div class="voice-controls">
+            <button class="voice-mic-btn" id="voiceMicBtn" onclick="toggleVoiceAssist()">
+              <i class="fa-solid fa-microphone" id="voiceMicIcon"></i>
+            </button>
+            <button class="voice-stop-btn" onclick="stopSpeaking()">
+              <i class="fa-solid fa-stop"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIDEO TAB ── -->
+      <div class="agent-tab-panel" id="panelVideo">
+        <div class="video-panel">
+          <div class="video-main">
+            <video id="remoteVideo" autoplay playsinline class="remote-video" style="display:none"></video>
+            <div class="video-ai-avatar" id="videoAiAvatar">
+              <div class="video-ai-face">
+                <i class="fa-solid fa-robot"></i>
+                <div class="video-ai-speaking" id="videoAiSpeaking"></div>
+              </div>
+              <div class="video-ai-name">JAG-AI</div>
+            </div>
+            <video id="localVideo" autoplay muted playsinline class="local-video"></video>
+            <div class="video-overlay-info" id="videoCallStatus">Ready to connect</div>
+          </div>
+          <div class="video-transcript-box" id="videoTranscript"></div>
+          <div class="video-controls">
+            <button class="vc-btn" id="vcMicBtn" onclick="toggleVideoMic()" title="Mic">
+              <i class="fa-solid fa-microphone" id="vcMicIcon"></i>
+            </button>
+            <button class="vc-btn vc-call" id="vcCallBtn" onclick="toggleVideoCall()">
+              <i class="fa-solid fa-video" id="vcCallIcon"></i>
+            </button>
+            <button class="vc-btn" id="vcCamBtn" onclick="toggleCamera()" title="Camera">
+              <i class="fa-solid fa-camera" id="vcCamIcon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Floating AI Button -->
+  <button class="fab-ai" id="fabAI" onclick="openAgentModal('chat')" title="Open AI Assistant">
+    <i class="fa-solid fa-robot"></i>
+    <span class="fab-pulse"></span>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/ai-agent.js"></script>
+</body>
+</html>
