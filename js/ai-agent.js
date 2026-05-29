@@ -358,6 +358,8 @@ async function startVideoCall() {
     st.textContent='📡 Connecting…';
     localStream=await navigator.mediaDevices.getUserMedia({video:true,audio:true});
     document.getElementById('localVideo').srcObject=localStream;
+    document.getElementById('videoTranscript').textContent='';
+    document.getElementById('videoAiResponse').textContent='';
     isVideoActive=true;
     document.getElementById('vcCallBtn').classList.add('in-call');
     document.getElementById('vcCallIcon').className='fa-solid fa-phone-slash';
@@ -375,24 +377,87 @@ function stopVideoCall() {
   const ci=document.getElementById('vcCallIcon');if(ci)ci.className='fa-solid fa-video';
   const ss=document.getElementById('videoCallStatus');if(ss)ss.textContent='Ready to connect';
   const tr=document.getElementById('videoTranscript');if(tr)tr.textContent='';
+  const ar=document.getElementById('videoAiResponse');if(ar)ar.textContent='';
+  const vs=document.getElementById('videoAiSpeaking');if(vs)vs.classList.remove('active');
 }
 
 function startVideoVoice() {
   if(!SR||!isVideoActive)return;
-  videoRecognition=new SR();videoRecognition.continuous=true;videoRecognition.interimResults=false;videoRecognition.lang='en-US';
-  videoRecognition.onresult=async e=>{
-    const txt=e.results[e.results.length-1][0].transcript;
-    const tb=document.getElementById('videoTranscript');if(tb)tb.textContent=`You: "${txt}"`;
-    document.getElementById('videoAiSpeaking')?.classList.add('active');
-    const resp=apiKey?await callAI([{role:'system',content:PROFILE_CONTEXT},{role:'user',content:txt}]):offline(txt);
-    const plain=resp.replace(/\*\*/g,'').replace(/<[^>]+>/g,' ');
-    if(tb)tb.textContent=`You: "${txt}" → JAG-AI responding…`;
-    speakText(plain);
-    setTimeout(()=>document.getElementById('videoAiSpeaking')?.classList.remove('active'),Math.min(plain.length*55,7000));
+  console.log('🎙️ Starting video voice recognition');
+  videoRecognition=new SR();
+  videoRecognition.continuous=true;
+  videoRecognition.interimResults=true;
+  videoRecognition.lang='en-US';
+  
+  videoRecognition.onstart=()=>{
+    console.log('🎤 Speech recognition started');
+    const tb=document.getElementById('videoTranscript');
+    if(tb)tb.textContent='🎙️ Listening…';
   };
-  videoRecognition.onerror=()=>{};
-  videoRecognition.onend=()=>{if(isVideoActive)setTimeout(()=>{try{videoRecognition?.start();}catch(_){}},600);};
-  try{videoRecognition.start();}catch(_){}
+  
+  videoRecognition.onresult=async e=>{
+    const results=e.results;
+    const transcript=Array.from(results).map(r=>r[0].transcript).join('');
+    const isFinal=results[results.length-1].isFinal;
+    
+    console.log('📝 Transcript:', transcript, 'Final:', isFinal);
+    const tb=document.getElementById('videoTranscript');
+    if(tb)tb.textContent=`You: "${transcript}"${isFinal?'':'...'}`;
+    
+    if(isFinal && transcript.trim().length > 1) {
+      console.log('✅ Final speech detected, generating response');
+      const aiResp=document.getElementById('videoAiResponse');
+      document.getElementById('videoAiSpeaking')?.classList.add('active');
+      aiResp.textContent='🤔 Thinking…';
+      
+      try {
+        const userMsg=transcript.trim();
+        console.log('🔄 Calling AI with:', userMsg);
+        const resp=apiKey
+          ?await callAI([{role:'system',content:PROFILE_CONTEXT},{role:'user',content:userMsg}])
+          :offline(userMsg);
+        
+        const plain=resp.replace(/\*\*/g,'').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').trim();
+        console.log('💬 AI Response:', plain);
+        aiResp.textContent=plain;
+        speakText(plain);
+        
+        const respLen=Math.min(plain.length*55, 7000);
+        setTimeout(()=>{
+          document.getElementById('videoAiSpeaking')?.classList.remove('active');
+          console.log('✔️ Response ended, waiting for next input');
+        }, respLen);
+      } catch(err) {
+        console.error('❌ Error:', err);
+        const aiResp=document.getElementById('videoAiResponse');
+        aiResp.textContent='❌ Error: '+err.message;
+        document.getElementById('videoAiSpeaking')?.classList.remove('active');
+      }
+    }
+  };
+  
+  videoRecognition.onerror=e=>{
+    console.error('🔊 Speech error:', e.error);
+    const tb=document.getElementById('videoTranscript');
+    if(tb)tb.textContent='⚠️ Mic error: '+e.error;
+  };
+  
+  videoRecognition.onend=()=>{
+    console.log('🔚 Speech recognition ended');
+    if(isVideoActive) {
+      console.log('🔄 Restarting speech recognition...');
+      setTimeout(()=>{try{videoRecognition?.start();}catch(e){console.error('Restart failed:',e);}},600);
+    }
+  };
+  
+  try {
+    console.log('🚀 Starting recognition...');
+    videoRecognition.start();
+  } catch(e) {
+    console.error('⚠️ Start error:', e);
+    const tb=document.getElementById('videoTranscript');
+    if(tb)tb.textContent='⚠️ '+e.message;
+  }
 }
 
 window.toggleVideoMic=()=>{

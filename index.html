@@ -523,9 +523,9 @@
           <button class="agent-tab-btn" id="tabVoice" onclick="switchTab('voice')" title="Voice">
             <i class="fa-solid fa-microphone"></i>
           </button>
-          <button class="agent-tab-btn" id="tabVideo" onclick="switchTab('video')" title="Video">
+          <!-- <button class="agent-tab-btn" id="tabVideo" onclick="switchTab('video')" title="Video">
             <i class="fa-solid fa-video"></i>
-          </button>
+          </button> -->
           <button class="agent-close" id="closeAgent" onclick="closeAgentModal()">
             <i class="fa-solid fa-xmark"></i>
           </button>
@@ -598,8 +598,8 @@
         </div>
       </div>
 
-      <!-- ── VIDEO TAB ── -->
-      <div class="agent-tab-panel" id="panelVideo">
+      <!-- ── VIDEO TAB (DISABLED) ── -->
+      <!-- <div class="agent-tab-panel" id="panelVideo">
         <div class="video-panel">
           <div class="video-main">
             <video id="remoteVideo" autoplay playsinline class="remote-video" style="display:none"></video>
@@ -609,6 +609,7 @@
                 <div class="video-ai-speaking" id="videoAiSpeaking"></div>
               </div>
               <div class="video-ai-name">JAG-AI</div>
+              <div class="video-ai-response" id="videoAiResponse"></div>
             </div>
             <video id="localVideo" autoplay muted playsinline class="local-video"></video>
             <div class="video-overlay-info" id="videoCallStatus">Ready to connect</div>
@@ -626,7 +627,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>

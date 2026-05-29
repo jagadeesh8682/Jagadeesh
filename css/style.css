@@ -737,14 +737,22 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .video-ai-speaking {
   position: absolute; inset: -6px; border-radius: 50%;
   border: 2px solid var(--primary); opacity: 0;
-  transition: opacity .3s;
+  transition: opacity .3s; box-shadow: 0 0 20px rgba(99,102,241,.5);
 }
 .video-ai-speaking.active {
   opacity: 1; animation: voice-ring 1s infinite;
+  box-shadow: 0 0 30px rgba(99,102,241,.8), inset 0 0 20px rgba(99,102,241,.3);
 }
 .video-ai-name {
   background: rgba(0,0,0,.6); color: #fff;
   padding: .3rem .8rem; border-radius: 50px; font-size: .8rem; font-weight: 600;
+}
+.video-ai-response {
+  max-width: 300px; margin-top: .5rem; padding: .6rem .8rem;
+  background: rgba(99,102,241,.15); border: 1px solid rgba(99,102,241,.3);
+  border-radius: 12px; color: #fff; font-size: .85rem; line-height: 1.4;
+  text-align: center; min-height: 20px; display: flex; align-items: center;
+  justify-content: center; max-height: 100px; overflow-y: auto;
 }
 .local-video {
   position: absolute; bottom: 10px; right: 10px;
